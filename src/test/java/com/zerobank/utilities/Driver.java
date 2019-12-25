@@ -12,63 +12,69 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-    private Driver() {
 
-    }
 
-    private static WebDriver driver;
+        private Driver() {
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            String browser = ConfigurationReader.get("browser");
-            switch (browser) {
-                case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-                    break;
-                case "chrome-headless":
-                    WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
-                    break;
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    break;
-                case "firefox-headless":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));
-                    break;
-                case "ie":
-                    if (!System.getProperty("os.name").toLowerCase().contains("windows"))
-                        throw new WebDriverException("Your OS doesn't support Internet Explorer");
-                    WebDriverManager.iedriver().setup();
-                    driver = new InternetExplorerDriver();
-                    break;
+        }
+        private static WebDriver driver;
 
-                case "edge":
-                    if (!System.getProperty("os.name").toLowerCase().contains("windows"))
-                        throw new WebDriverException("Your OS doesn't support Edge");
-                    WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
-                    break;
+        public static WebDriver getDriver() {
+            if (driver == null) {
+                String browser = ConfigurationReader.get("browser");
+                switch (browser) {
+                    case "chrome":
+                        WebDriverManager.chromedriver().setup();
+                        driver = new ChromeDriver();
+                        break;
+                    case "chrome-headless":
+                        WebDriverManager.chromedriver().setup();
+                        driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+                        break;
+                    case "firefox":
+                        WebDriverManager.firefoxdriver().setup();
+                        driver = new FirefoxDriver();
+                        break;
+                    case "firefox-headless":
+                        WebDriverManager.firefoxdriver().setup();
+                        driver = new FirefoxDriver(new FirefoxOptions().setHeadless(true));
+                        break;
+                    case "ie":
+                        if (!System.getProperty("os.name").toLowerCase().contains("windows"))
+                            throw new WebDriverException("Your OS doesn't support Internet Explorer");
+                        WebDriverManager.iedriver().setup();
+                        driver = new InternetExplorerDriver();
+                        break;
 
-                case "safari":
-                    if (!System.getProperty("os.name").toLowerCase().contains("mac"))
-                        throw new WebDriverException("Your OS doesn't support Safari");
-                    WebDriverManager.getInstance(SafariDriver.class).setup();
-                    driver = new SafariDriver();
-                    break;
+                    case "edge":
+                        if (!System.getProperty("os.name").toLowerCase().contains("windows"))
+                            throw new WebDriverException("Your OS doesn't support Edge");
+                        WebDriverManager.edgedriver().setup();
+                        driver = new EdgeDriver();
+                        break;
+
+                    case "safari":
+                        if (!System.getProperty("os.name").toLowerCase().contains("mac"))
+                            throw new WebDriverException("Your OS doesn't support Safari");
+                        WebDriverManager.getInstance(SafariDriver.class).setup();
+                        driver = new SafariDriver();
+                        break;
+
+                    default:
+                        WebDriverManager.chromedriver().setup();
+                        driver = new ChromeDriver();
+                }
+
             }
 
+            return driver;
         }
 
-        return driver;
-    }
-
-    public static void closeDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
+        public static void closeDriver() {
+            if (driver != null) {
+                driver.quit();
+                driver = null;
+            }
         }
+
     }
-}

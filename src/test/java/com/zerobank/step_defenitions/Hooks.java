@@ -1,7 +1,7 @@
 package com.zerobank.step_defenitions;
 
+import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
-
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
         @Before
         public void setUp(){
            Driver.getDriver().manage().window().maximize();
+           Driver.getDriver().get(ConfigurationReader.get("url"));
 
         }
 
