@@ -1,5 +1,6 @@
 package com.zerobank.step_defenitions;
 
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
 import io.cucumber.core.api.Scenario;
@@ -26,6 +27,7 @@ import org.openqa.selenium.TakesScreenshot;
                 scenario.embed(screenshot,"image/png");
 
             }
+            BrowserUtils.waitFor(4);
             Driver.closeDriver();
         }
 
