@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class AccountSummaryPage {
+public class AccountSummaryPage extends BasePage {
     public AccountSummaryPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
