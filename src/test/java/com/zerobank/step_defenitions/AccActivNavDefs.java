@@ -35,8 +35,8 @@ public class AccActivNavDefs {
     @Then("Account drop down should have {string} selected")
     public void account_drop_down_should_have_selected(String expectedValue) {
 
-      String actualValue = accountSummaryPage.accontDropdownList().getFirstSelectedOption().getAttribute("text");
-      Assert.assertEquals(expectedValue,actualValue);
+        String actualValue = accountSummaryPage.accontDropdownList().getFirstSelectedOption().getAttribute("text");
+        Assert.assertEquals(expectedValue, actualValue);
     }
 
 
