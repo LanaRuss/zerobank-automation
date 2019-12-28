@@ -12,7 +12,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class AccActivNavDefs {
+public class AccSummaryNavDefs {
     LoginPage loginPage = new LoginPage();
     AccountSummaryPage accountSummaryPage = new AccountSummaryPage();
 
