@@ -379,11 +379,11 @@ public class BrowserUtils {
     public static List sortAndReverseDescending( List<String> list){
         Collections.sort(list);
         Collections.reverse(list);
-      /*  ArrayList<String> sortedAscendingList=  new ArrayList<>();
+       /* ArrayList<String> sortedAscendingList=  new ArrayList<>();
         for( int i = list.size()-1; i>=0; i--){
             sortedAscendingList.add(list.get(i));
-        }
-*/
+        } */
+
         return list;
     }
 
