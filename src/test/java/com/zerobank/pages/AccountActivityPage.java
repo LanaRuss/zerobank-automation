@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class AccountActivityPage {
 
     public AccountActivityPage(){
@@ -26,11 +28,16 @@ public class AccountActivityPage {
     // returns select of all options for dropdown
    public Select accountOptionsList(){ return new Select(accountOptionsDropdown); }
 
+   @FindBy( xpath = "(//tbody)[2]/tr")
+   public List<WebElement> amountOfRawsList;
+
+   @FindBy( xpath = "(//tbody)[2]")
+   public WebElement resultTable;
 
     public String returnValueFromTable(int column , int row){
        String cellValue = null;
      try {
-         WebElement cell = Driver.getDriver().findElement(By.xpath("//tbody/tr[" + row + "]/td[" + column + "]"));
+         WebElement cell = Driver.getDriver().findElement(By.xpath("(//tbody)[2]/tr[" + row + "]/td[" + column + "]"));
          cellValue = cell.getText();
      }catch (RuntimeException e){
          System.out.println("no such cell exists");

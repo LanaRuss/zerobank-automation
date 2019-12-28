@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -374,6 +375,18 @@ public class BrowserUtils {
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
+
+    public static List sortAndReverseDescending( List<String> list){
+        Collections.sort(list);
+        Collections.reverse(list);
+      /*  ArrayList<String> sortedAscendingList=  new ArrayList<>();
+        for( int i = list.size()-1; i>=0; i--){
+            sortedAscendingList.add(list.get(i));
+        }
+*/
+        return list;
+    }
+
 
 
 
