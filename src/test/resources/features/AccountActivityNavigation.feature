@@ -1,5 +1,5 @@
-@AccountActivity
-Feature:  Navigating to specific accounts in Accounts Activity
+@AccountSummary
+Feature:  Navigating to specific accounts in Accounts Summary
 
 Background:
   Given  the user is logged in
