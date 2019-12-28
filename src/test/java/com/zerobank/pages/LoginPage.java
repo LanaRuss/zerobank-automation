@@ -22,6 +22,9 @@ public class LoginPage extends BasePage {
     @FindBy(name = "submit")
     public WebElement signInButton;
 
+    @FindBy(xpath = "//div[contains(text(),'Login and/or password are wrong.')]")
+    public WebElement ErrorMessage;
+
 
     public void login(String usernameKey , String passwordKey){
         loginField.sendKeys(ConfigurationReader.get(usernameKey));
