@@ -64,7 +64,7 @@ public class AccountActivityPage {
     @FindBy(id = "aa_type")
     public WebElement type;
 
-    public Select typeList(){ return new Select(accountOptionsDropdown); }
+    public Select typeList(){ return new Select(type); }
 
     @FindBy( tagName = "button")
     public WebElement findButton;
