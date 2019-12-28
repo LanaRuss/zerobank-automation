@@ -1,5 +1,6 @@
 package com.zerobank.step_defenitions;
 
+import com.zerobank.pages.AccountActivityPage;
 import com.zerobank.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import net.bytebuddy.implementation.bytecode.Throw;
@@ -9,6 +10,7 @@ import io.cucumber.java.en.When;
 
 public class FindTransactionsDef {
     LoginPage loginPage = new LoginPage();
+    AccountActivityPage accountActivityPage = new AccountActivityPage();
 
     @Given("user is navigating to {string}")
     public void userIsNavigatingTo(String link) {
@@ -58,51 +60,50 @@ public class FindTransactionsDef {
         throw new cucumber.api.PendingException();
     }
 
-    @Then("the results table	should only not contain	transactions dated {string}")
+    @Then("the results table should only not contain transactions dated {string}")
     public void the_results_table_should_only_not_contain_transactions_dated(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
 
-    @Then("results	table should only show descriptions containing {string}")
+    @Then("results table should only show descriptions containing {string}")
     public void results_table_should_only_show_descriptions_containing(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("the	user enters	description	{string}")
-    public void the_user_enters_description(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+    @When("the user enters description {string}")
+    public void the_user_enters_description(String message) {
+        accountActivityPage.descriptionInput.sendKeys(message);
+
     }
 
 
-    @Then("results table	should show	at least one result	under Deposit")
+    @Then("results table should show at least one result under Deposit")
     public void results_table_should_show_at_least_one_result_under_Deposit() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @Then("results table	should show	at least one result	under Withdrawal")
+    @Then("results table should show at least one result under Withdrawal")
     public void results_table_should_show_at_least_one_result_under_Withdrawal() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @When("user selects type	{string}")
-    public void user_selects_type(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+    @When("user selects type {string}")
+    public void user_selects_type(String selectValue) {
+        accountActivityPage.typeList().selectByValue(selectValue);
     }
 
-    @Then("results table	should show	no result under	Withdrawal")
+    @Then("results table should show no result under Withdrawal")
     public void results_table_should_show_no_result_under_Withdrawal() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
     }
 
-    @Then("results table	should show	no result under")
+    @Then("results table should show no result under")
     public void results_table_should_show_no_result_under() {
         // Write code here that turns the phrase above into concrete actions
         throw new cucumber.api.PendingException();
