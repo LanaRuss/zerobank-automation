@@ -27,7 +27,7 @@ import org.openqa.selenium.TakesScreenshot;
                 scenario.embed(screenshot,"image/png");
 
             }
-            BrowserUtils.waitFor(4);
+            BrowserUtils.waitFor(2);
             Driver.closeDriver();
         }
 
