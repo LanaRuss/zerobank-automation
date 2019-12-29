@@ -69,6 +69,10 @@ public class AccountActivityPage {
     @FindBy( tagName = "button")
     public WebElement findButton;
 
+    @FindBy (xpath = "(//thead)[2]/tr/th")
+    public List<WebElement> tableHeadList;
+
+
 
 
 }

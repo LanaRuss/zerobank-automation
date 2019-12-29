@@ -21,7 +21,7 @@ public class AccSummaryNavDefs {
         loginPage.login("username", "password");
     }
 
-    @When("the user clicks on	{string} link on the Account Summary page")
+    @When("the user clicks on {string} link on the Account Summary page")
     public void the_user_clicks_on_on_the_Account_Summary_page(String link) {
         accountSummaryPage.getLink(link).click();
     }
