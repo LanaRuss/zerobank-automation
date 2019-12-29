@@ -12,7 +12,7 @@ public class LoginDefs {
     LoginPage loginPage = new LoginPage();
     @Given("The user is on the {string} page")
     public void the_user_is_on_the_page(String string) {
-        Assert.assertTrue(Driver.getDriver().getTitle().equalsIgnoreCase("Zero - "+string));
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),string);
     }
 
     @Then("The user logs in with {string} credentials")
@@ -35,4 +35,7 @@ public class LoginDefs {
     public void theErrorMessageIsDisplayed() {
         Assert.assertTrue(new LoginPage().ErrorMessage.isDisplayed());
     }
+
+
+
 }
