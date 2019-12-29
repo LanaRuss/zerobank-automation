@@ -2,7 +2,7 @@ Feature: Add new payee under pay bills
 
   Background:
     Given the user is logged in
-
+    
   Scenario: Add a new payee
     Given user is navigating to "Pay Bills"
     And go to "Add New Payee" tab

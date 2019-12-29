@@ -2,9 +2,11 @@ package com.zerobank.pages;
 
 import com.zerobank.utilities.Driver;
 
+import io.cucumber.java.eo.Se;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -24,4 +26,15 @@ public class PayBillsPage  extends  BasePage{
 
     @FindBy( xpath = "//div[@id  ='alert_content']")
     public WebElement successMessage;
+
+    @FindBy( xpath = "//select[@id='pc_currency']")
+    public WebElement currencyDropdown;
+
+    public Select availableCurrencyList(){return new Select(currencyDropdown);}
+
+    @FindBy (id = "pc_calculate_costs")
+    public WebElement calculateCostsButton;
+
+    @FindBy (id = "pc_amount")
+    public WebElement amountInput;
 }
