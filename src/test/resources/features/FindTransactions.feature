@@ -19,6 +19,8 @@ Feature: Find Transactions in Account Activity
 
   Scenario: Search description
     When   the user enters description "ONLINE"
+    Given the user accesses the Find Transactions tab
+    When  the user enters description "ONLINE"
     And    clicks search
     Then   results table should only show descriptions containing "ONLINE"
     When   the user enters description "OFFICE"
@@ -27,6 +29,8 @@ Feature: Find Transactions in Account Activity
 
   Scenario: Search	description case insensitive
     When   the user enters description "ONLINE"
+    Given  the user accesses the Find Transactions tab
+    When   the user enters description "ONLINE"
     And    clicks search
     Then   results table should only show descriptions containing "ONLINE"
     When   the user enters description "online"
@@ -34,6 +38,7 @@ Feature: Find Transactions in Account Activity
     Then   results table should only show descriptions containing "ONLINE"
 
   Scenario: Type
+    Given the user accesses the Find Transactions tab
     And   clicks search
     Then  results table should show at least one result under "Deposit" 3
     Then  results table should show at least one result under "Withdrawal" 4

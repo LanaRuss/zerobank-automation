@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class AccountSummaryPage extends BasePage {
     public AccountSummaryPage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -32,6 +34,12 @@ public class AccountSummaryPage extends BasePage {
 
     @FindBy(id = "aa_accountId")
     public WebElement accountDropdown;
+
+    @FindBy(xpath = "//h2")
+    public List<WebElement> accountTypes;
+
+    @FindBy(xpath = "(//h2)[3]/../div[3]//th")
+    public List<WebElement> creditAccountsColums;
 
     public Select accontDropdownList(){ return new Select(accountDropdown); }
 
