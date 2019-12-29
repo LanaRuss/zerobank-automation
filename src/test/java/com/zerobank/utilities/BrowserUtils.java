@@ -379,12 +379,17 @@ public class BrowserUtils {
     public static List sortAndReverseDescending( List<String> list){
         Collections.sort(list);
         Collections.reverse(list);
-       /* ArrayList<String> sortedAscendingList=  new ArrayList<>();
-        for( int i = list.size()-1; i>=0; i--){
-            sortedAscendingList.add(list.get(i));
-        } */
-
         return list;
+    }
+
+    public static List<String> getTextFromSelectOptions( List<WebElement> options){
+
+        List<String> textFromOptions = new ArrayList<>();
+
+        for (WebElement each : options) {
+            textFromOptions.add(each.getText());
+            }
+        return textFromOptions;
     }
 
 

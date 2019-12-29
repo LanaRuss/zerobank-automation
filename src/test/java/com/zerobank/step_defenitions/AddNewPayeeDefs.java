@@ -17,7 +17,6 @@ public class AddNewPayeeDefs {
 
     PayBillsPage payBillsPage =  new PayBillsPage();
 
-
     @Given("go to {string} tab")
     public void go_to_tab(String tab) {
         Driver.getDriver().findElement(By.linkText(tab)).click();
@@ -36,9 +35,6 @@ public class AddNewPayeeDefs {
                 }
             }
         }
-
-       payBillsPage.addButton.click();
-
 
     }
 

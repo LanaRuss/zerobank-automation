@@ -9,12 +9,15 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-    public class Hooks {
+import java.util.concurrent.TimeUnit;
+
+public class Hooks {
 
         @Before
         public void setUp(){
            Driver.getDriver().manage().window().maximize();
            Driver.getDriver().get(ConfigurationReader.get("url"));
+           Driver.getDriver().manage().timeouts().implicitlyWait(2 , TimeUnit.SECONDS);
 
         }
 
