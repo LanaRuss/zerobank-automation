@@ -35,6 +35,7 @@ public class AddNewPayeeDefs {
                 }
             }
         }
+        payBillsPage.addButton.click();
 
     }
 
