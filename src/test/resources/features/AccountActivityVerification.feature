@@ -6,7 +6,7 @@ Feature: Account Activity verification
 
 
   Scenario: verify title
-    Then title should be "Zero – Account activity"
+    Then title should be "Zero - Account Activity"
 
   Scenario: Account dropdown default option should be Savings
     Then account dropdown default option should be "Savings"
@@ -21,7 +21,7 @@ Feature: Account Activity verification
       | Credit Card |
       | Brokerage   |
 
-  @wip
+
   Scenario: Transaction Table names
     Then the user accesses the Find Transactions tab
     Then clicks search

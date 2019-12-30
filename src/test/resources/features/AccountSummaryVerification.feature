@@ -5,7 +5,7 @@ Feature: Account summary verification
 
   Scenario: Verify title
     Given The user is on the "http://zero.webappsecurity.com/bank/account-summary.html" page
-    Then title should be "Zero - Account summary"
+    Then title should be "Zero - Account Summary"
 
   Scenario: Verify account types
     Given The user is on the "http://zero.webappsecurity.com/bank/account-summary.html" page
@@ -14,7 +14,7 @@ Feature: Account summary verification
       | Investment Accounts |
       | Credit Accounts     |
       | Loan Accounts       |
-@wip
+
   Scenario:
     Given The user is on the "http://zero.webappsecurity.com/bank/account-summary.html" page
     Then Credit accounts table must have colums

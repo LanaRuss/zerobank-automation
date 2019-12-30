@@ -10,31 +10,56 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class PayBillsPage  extends  BasePage{
+public class PayBillsPage extends BasePage {
 
-    public PayBillsPage(){ PageFactory.initElements(Driver.getDriver(), this);
+    public PayBillsPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(id = "id='np_new_payee_name'")
     public WebElement payeeName;
 
-    @FindBy (xpath = "//*[starts-with(@id, 'np_new_payee')]")
+    @FindBy(xpath = "//*[starts-with(@id, 'np_new_payee')]")
     public List<WebElement> addNewPayee;
 
-    @FindBy( id = "add_new_payee")
+    @FindBy(id = "add_new_payee")
     public WebElement addButton;
 
-    @FindBy( xpath = "//div[@id  ='alert_content']")
+    @FindBy(xpath = "//div[@id  ='alert_content']")
     public WebElement successMessage;
 
-    @FindBy( xpath = "//select[@id='pc_currency']")
+    @FindBy(xpath = "//select[@id='pc_currency']")
     public WebElement currencyDropdown;
 
-    public Select availableCurrencyList(){return new Select(currencyDropdown);}
+    public Select availableCurrencyList() {
+        return new Select(currencyDropdown);
+    }
 
-    @FindBy (id = "pc_calculate_costs")
+    @FindBy(id = "pc_calculate_costs")
     public WebElement calculateCostsButton;
 
-    @FindBy (id = "pc_amount")
+    @FindBy(id = "pc_amount")
     public WebElement amountInput;
+
+    @FindBy(xpath = "//input[starts-with(@id, 'sp_')]")
+    public List<WebElement> inputsForPayment;
+
+    @FindBy(id = "sp_payee")
+    public WebElement payeeDropdown;
+
+    public Select payeeDropdownList() {
+        return new Select(payeeDropdown);
+    }
+
+    @FindBy(id = "sp_account")
+    public WebElement accountDropdown;
+
+    public Select accountDropdownList() {
+        return new Select(accountDropdown);
+    }
+
+    @FindBy(id = "pay_saved_payees")
+    public WebElement payButton;
+
+
 }

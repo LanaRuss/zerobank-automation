@@ -27,11 +27,12 @@ public class Hooks {
             if(scenario.isFailed())
             {
                 final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-                scenario.embed(screenshot,"image/png");
+                scenario.embed(screenshot,"image.png");
 
             }
-            BrowserUtils.waitFor(2);
+
             Driver.closeDriver();
+
         }
 
     }
